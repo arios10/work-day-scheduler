@@ -15,8 +15,9 @@ var timeKeeper = function() {
   debugger;
   var currentTime = moment().hour();
 
+  //get time from id and use it to compare to current time
   $(".time").each(function () {
-    var timeVar = parseInt($(this).attr("id").split("am")[0]);
+    var timeVar = parseInt($(this).attr("id").split("hour")[0]);
 
     //check if time is in past and add/remove classes
     if (timeVar < currentTime) {
@@ -40,15 +41,15 @@ var timeKeeper = function() {
 }
 
 //get item from local storage using val of id(time) and class
-$("#9am .description").val(localStorage.getItem("9am"));
-$("#10am .description").val(localStorage.getItem("10am"));
-$("#11am .description").val(localStorage.getItem("11am"));
-$("#12pm .description").val(localStorage.getItem("12pm"));
-$("#13pm .description").val(localStorage.getItem("13pm"));
-$("#14pm .description").val(localStorage.getItem("14pm"));
-$("#15pm .description").val(localStorage.getItem("15pm"));
-$("#16pm .description").val(localStorage.getItem("16pm"));
-$("#17pm .description").val(localStorage.getItem("17pm"));
+$("#9hour .description").val(localStorage.getItem("9hour"));
+$("#10hour .description").val(localStorage.getItem("10hour"));
+$("#11hour .description").val(localStorage.getItem("11hour"));
+$("#12hour .description").val(localStorage.getItem("12hour"));
+$("#13hour .description").val(localStorage.getItem("13hour"));
+$("#14hour .description").val(localStorage.getItem("14hour"));
+$("#15hour .description").val(localStorage.getItem("15hour"));
+$("#16hour .description").val(localStorage.getItem("16hour"));
+$("#17hour .description").val(localStorage.getItem("17hour"));
 
 //function call
 timeKeeper();
